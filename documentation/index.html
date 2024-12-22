@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+
+<head>
+    <title>Medimart - Health And Medical  Next Js Template </title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/vendor/animate-css/vivify.min.css" />
+
+    <link rel="stylesheet" href="./assets/vendor/light-gallery/css/lightgallery.css" />
+
+    <!-- JSTree (Folder Stewart) -->
+    <link rel="stylesheet" href="./assets/vendor/jstree/dist/themes/default/style.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./assets/css/site.min.css" />
+
+    <!-- for demo only -->
+    <style>
+        .card .body {
+            font-size: 15px;
+        }
+
+        .main_features li {
+            padding: 5px 0;
+        }
+
+        .prettyprint {
+            color: #ffffff;
+        }
+
+        #Credits li {
+            line-height: 30px;
+        }
+
+        .lightGallery img {
+            border: 1px solid #484a4e;
+        }
+
+        .sm-logo {
+            width: 25px;
+        }
+
+        #main-content {
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        div#wrapper {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="theme-green font-krub light_version">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+        </div>
+    </div>
+
+    <!-- Theme Setting -->
+    <div class="themesetting">
+        <a href="javascript:void(0);" class="theme_btn"><i class="icon-magic-wand"></i></a>
+        <div class="card theme_color">
+            <div class="header">
+                <h2>Theme Color</h2>
+            </div>
+            <ul class="choose-skin list-unstyled mb-0">
+                <li data-theme="green">
+                    <div class="green"></div>
+                </li>
+                <li data-theme="orange">
+                    <div class="orange"></div>
+                </li>
+                <li data-theme="blush">
+                    <div class="blush"></div>
+                </li>
+                <li data-theme="cyan" class="active">
+                    <div class="cyan"></div>
+                </li>
+                <li data-theme="indigo">
+                    <div class="indigo"></div>
+                </li>
+                <li data-theme="red">
+                    <div class="red"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="card font_setting">
+            <div class="header">
+                <h2>Font Settings</h2>
+            </div>
+            <div>
+                <div class="fancy-radio mb-2">
+                    <label><input name="font" value="font-krub" type="radio" checked /><span><i></i>Krub Google
+                            font</span></label>
+                </div>
+                <div class="fancy-radio mb-2">
+                    <label><input name="font" value="font-montserrat" type="radio" /><span><i></i>Montserrat Google
+                            font</span></label>
+                </div>
+                <div class="fancy-radio">
+                    <label><input name="font" value="font-roboto" type="radio" /><span><i></i>Robot Google
+                            font</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="card setting_switch">
+            <div class="header">
+                <h2>Settings</h2>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Light Version
+                    <div class="float-right">
+                        <label class="switch">
+                            <input type="checkbox" class="lv-btn" checked />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    Mini Sidebar
+                    <div class="float-right">
+                        <label class="switch">
+                            <input type="checkbox" class="mini-sidebar-btn" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="form-group">
+                <label class="d-block">Traffic this Month <span class="float-right">77%</span></label>
+                <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="77"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 77%"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="d-block">Server Load <span class="float-right">50%</span></label>
+                <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+        <nav class="navbar top-navbar">
+            <div class="container-fluid">
+                <div class="navbar-left">
+                    <div class="navbar-btn">
+                        <a href="index"><img src="./assets/logo.png" alt="Medimart Logo" class="img-fluid sm-logo"
+                                style="width: 100px;" /></a>
+                        <button type="button" class="btn-toggle-offcanvas">
+                            <i class="lnr lnr-menu fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                                <i class="icon-envelope"></i>
+                                <span class="notification-dot bg-green">4</span>
+                            </a>
+                            <ul class="dropdown-menu right_chat email vivify fadeIn">
+                                <li class="header green">You have 4 New eMail</li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <div class="avtar-pic w35 bg-red">
+                                                <span>FC</span>
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="name">James Wert
+                                                    <small class="float-right text-muted">Just now</small></span>
+                                                <span class="message">Update GitHub</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <div class="avtar-pic w35 bg-indigo">
+                                                <span>FC</span>
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="name">Folisise Chosielie
+                                                    <small class="float-right text-muted">12min ago</small></span>
+                                                <span class="message">New Messages</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object" src="./assets/images/xs/avatar5.jpg" alt="" />
+                                            <div class="media-body">
+                                                <span class="name">Louis Henry
+                                                    <small class="float-right text-muted">38min ago</small></span>
+                                                <span class="message">Design bug fix</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="media mb-0">
+                                            <img class="media-object" src="./assets/images/xs/avatar2.jpg" alt="" />
+                                            <div class="media-body">
+                                                <span class="name">Debra Stewart
+                                                    <small class="float-right text-muted">2hr ago</small></span>
+                                                <span class="message">Fix Bug</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                                <i class="icon-bell"></i>
+                                <span class="notification-dot bg-azura">4</span>
+                            </a>
+                            <ul class="dropdown-menu feeds_widget vivify fadeIn">
+                                <li class="header blue">You have 4 New Notifications</li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="feeds-left bg-red">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="feeds-body">
+                                            <h4 class="title text-danger">
+                                                Issue Fixed
+                                                <small class="float-right text-muted">9:10 AM</small>
+                                            </h4>
+                                            <small>WE have fix all Design bug with Responsive</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="feeds-left bg-info">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="feeds-body">
+                                            <h4 class="title text-info">
+                                                New User
+                                                <small class="float-right text-muted">9:15 AM</small>
+                                            </h4>
+                                            <small>I feel great! Thanks team</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="feeds-left bg-orange">
+                                            <i class="fa fa-question-circle"></i>
+                                        </div>
+                                        <div class="feeds-body">
+                                            <h4 class="title text-warning">
+                                                Server Warning
+                                                <small class="float-right text-muted">9:17 AM</small>
+                                            </h4>
+                                            <small>Your connection is not private</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="feeds-left bg-green">
+                                            <i class="fa fa-thumbs-o-up"></i>
+                                        </div>
+                                        <div class="feeds-body">
+                                            <h4 class="title text-success">
+                                                2 New Feedback
+                                                <small class="float-right text-muted">9:22 AM</small>
+                                            </h4>
+                                            <small>It will give a smart finishing to your site</small>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-right">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <form id="navbar-search" class="navbar-form search-form">
+                                    <input value="" class="form-control" placeholder="Search here..." type="text" />
+                                    <button type="button" class="btn btn-default">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </form>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </nav>
+
+        <div id="megamenu" class="megamenu particles_js">
+            <a href="javascript:void(0);" class="megamenu_toggle btn btn-danger"><i class="icon-close"></i></a>
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-12">
+                        <ul class="q_links">
+                            <li>
+                                <a href="#"><i class="icon-envelope"></i><span>Inbox</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-bubbles"></i><span>Messenger</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-calendar"></i><span>Event</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-user"></i><span>Profile</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-printer"></i><span>Invoice</span></a>
+                            </li>
+                            <li>
+                                <a href="page-timeline"><i class="icon-list"></i><span>Timeline</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card w_card3">
+                            <div class="body">
+                                <div class="text-center">
+                                    <i class="icon-picture text-info"></i>
+                                    <h4 class="m-t-25 mb-0">104 Picture</h4>
+                                    <p>Your gallery download complete</p>
+                                    <a href="javascript:void(0);" class="btn btn-info btn-round">Download now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card w_card3">
+                            <div class="body">
+                                <div class="text-center">
+                                    <i class="icon-diamond text-success"></i>
+                                    <h4 class="m-t-25 mb-0">813 Point</h4>
+                                    <p>You are doing great job!</p>
+                                    <a href="javascript:void(0);" class="btn btn-success btn-round">Read now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card w_card3">
+                            <div class="body">
+                                <div class="text-center">
+                                    <i class="icon-social-twitter text-primary"></i>
+                                    <h4 class="m-t-25 mb-0">3,756</h4>
+                                    <p>New Followers on Twitter</p>
+                                    <a href="javascript:void(0);" class="btn btn-primary btn-round">Find more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Anyone send me a message
+                                <div class="float-right">
+                                    <label class="switch">
+                                        <input type="checkbox" checked="" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Anyone seeing my profile page
+                                <div class="float-right">
+                                    <label class="switch">
+                                        <input type="checkbox" checked="" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Anyone posts a comment on my post
+                                <div class="float-right">
+                                    <label class="switch">
+                                        <input type="checkbox" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="particles-js"></div>
+        </div>
+
+        <div id="left-sidebar" class="sidebar">
+            <div class="navbar-brand">
+                <!-- <a href="javascript:void(0);">
+                <img src="./assets/logo.png" alt="Medimart Logo" class="img-fluid sm-logo" /><span>Medimart</span>
+            </a> -->
+                <a href="javascript:void(0);" class="brand-logo d-flex align-items-center">
+                    <img src="./assets/logo.png" alt="" style="width: 100px;">
+                    <!-- <div style="    margin-left: 20px;
+              max-width: 120px;
+              margin-top: 5px;
+              font-size: 38px;
+              color: #000;     font-weight: bold;" class="brand-title">Medimart</div>
+            </a> -->
+                    <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right">
+                        <i class="lnr lnr-menu fa fa-chevron-circle-left"></i>
+                    </button>
+            </div>
+            <div class="sidebar-scroll">
+                <div class="user-account">
+
+                    <div class="dropdown">
+                        <span>Welcome,</span>
+                        <a href="javascript:void(0);" class="dropdown-toggle user-name"
+                            data-toggle="dropdown"><strong>Medimart</strong></a>
+                        <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
+                            <li>
+                                <a href="https://themeforest.net/user/template_path/portfolio"><i class="icon-user"></i>My Profile</a>
+                            </li>
+                            <li>
+                                <a href="https://templatepath.ticksy.com/"><i class="icon-envelope-open"></i>Support</a>
+                            </li>
+                            <li class="divider"></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav id="left-sidebar-nav" class="sidebar-nav">
+                    <ul id="main-menu" class="metismenu">
+                        <li class="active">
+                            <a href="#documenter_cover"><i class="icon-home"></i><span>Start</span></a>
+                        </li>
+                        <li>
+                            <a href="#features"><i class="icon-star"></i><span>Features</span></a>
+                        </li>
+                        <li>
+                            <a href="#react_js"><i class="icon-tag"></i><span>React.js</span></a>
+                        </li>
+                        <li>
+                            <a href="#main_content"><i class="icon-arrow-right"></i><span>Main Content</span></a>
+                        </li>
+                        <li>
+                            <a href="#create_page"><i class="icon-plus"></i><span>Create a Page</span></a>
+                        </li>
+                        <li>
+                            <a href="#folder_structure"><i class="icon-folder-alt"></i><span>Folder Structure</span></a>
+                        </li>
+                        <li>
+                            <a href="#Credits"><i class="icon-like"></i><span>Credits</span></a>
+                        </li>
+                        <li>
+                            <a href="#layout"><i class="icon-star"></i><span>Layout</span></a>
+                        </li>
+
+                        <li>
+                            <a href="#thank_you"><i class="icon-heart"></i><span>THANK YOU!</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <div class="block-header">
+                <div class="row clearfix">
+                    <div class="col-md-6 col-sm-12">
+                        <h1>Documentation</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Medimart</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Documentation
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right hidden-xs">
+                        <!--  <a
+                href="javascript:void(0);"
+                class="btn btn-sm btn-primary btn-round"
+                title=""
+                >Create Campaign</a
+              > -->
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="card" id="documenter_cover">
+                            <div class="body">
+                                <h4 class="mb-3">
+                                    Medimart - Health And Medical  Next Js Template
+                                </h4>
+                                <p>
+                                    Medimart is a React Next Js template for Health and Medical websites. It is a highly suitable template for doctors, dentists, hospitals, health clinics, surgeons and any type of health or medical organization. It has purpose oriented design, responsive layout and special features like appointment forms, services, doctors, gallery items, testimonials, FAQs, news and other pages.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card" id="features">
+                            <div class="header">
+                                <h2>Main Features</h2>
+                                <ul class="header-dropdown dropdown">
+                                    <li>
+                                        <a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="javascript:void(0);">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Another Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Something else</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul class="main_features">
+                                            <li>Develop with <a href="https://Next Js.org/" target="_blank">Next Js</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+                                            </li>
+
+                                            <li>Fully Responsive</li>
+                                            <li>Ready to used widget</li>
+                                            <li>Customizable React Bootstrap Components</li>
+
+                                            <li>Detailed Documentation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="card" id="react_js">
+                            <div class="header">
+                                <h2>
+                                    React.JS Installation & Setup
+                                    <small>A JavaScript library for building user interfaces.</small>
+                                </h2>
+                            </div>
+                            <div class="body">
+                                <p>
+                                    <strong>Installing</strong><br />
+                                <p>Make sure if <code>NODEJS</code> is installed on your computer</p>
+                                Run <code>npm install -g create-react-app</code>
+                                command from your teminal to install React Globally.
+                                </p>
+                                <p>
+                                    <strong>Install npm :-</strong><br /> Run
+                                    <code>npm install</code> command from your project
+                                    directory. It will create 'node_module' folder in this all
+                                    dependency files will be install with this command.
+                                </p>
+                                <p>
+                                    <strong>Run Project :-</strong><br /> Run
+                                    <code>npm run dev</code> command from your project directory.
+                                    With is command file will be compiled and it will be loaded
+                                    on local server `http://localhost:3000`.
+                                </p>
+                                <p>
+                                    <strong>Production Build :-</strong><br /> Run
+                                    <code>npm run build</code> Builds the app for production to
+                                    the `build` folder. It correctly bundles React in production
+                                    mode and optimizes the build for the best performance.
+                                </p>
+                                <p>
+                                    <strong>Further help :-</strong><br /> To get more help on the
+                                    Next Js.js checkout
+                                    <a href="https://Next Js.org/">Next Js</a>
+                                </p>
+                                <p>
+                                    <strong>Note:</strong> You can learn more in the
+                                    <a href="https://github.com/vercel/next.js">Create Next App Documentation</a>. To
+                                    learn Next, check out the
+                                    <a href="https://Next Js.org/">Next Documentation</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card" id="main_content">
+                            <div class="header">
+                                <h2>Main Content</h2>
+                                <ul class="header-dropdown dropdown">
+                                    <li>
+                                        <a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="javascript:void(0);">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Another Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Something else</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h5>layout.js Structure</h5>
+                            <div class="body">
+<pre class="prettyprint lang-js linenums">
+import "@/node_modules/react-modal-video/css/modal-video.css"
+import "public/assets/css/bootstrap.css"
+import "public/assets/css/style.css"
+import "public/assets/css/responsive.css"
+import "public/assets/css/color.css"
+import 'swiper/css'
+import "swiper/css/pagination"
+import 'swiper/css/free-mode';
+import { inter, jost } from '@/lib/font'
+export const metadata = {
+    title: 'Create Next App',
+    description: 'Generated by create next app',
+}
+
+export default function RootLayout({ children }) {
+    return (
+        &lt;html lang="en" className={`${inter.variable} ${jost.variable}`}&gt;
+            &lt;body&gt;{children}&lt;/body&gt;
+        &lt;/html&gt;
+    )
+}
+                                    
+  </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card" id="create_page">
+                            <div class="header">
+                                <h2>Create a Page<h5>How to create a custom page</h5>
+                                </h2>
+                            </div>
+                            <div class="body">
+                                <p>1. Create page component <code>app\MyPage.js</code></p>
+                                <pre class="prettyprint lang-html linenums">
+import React from "react";
+
+export function MyPage() {
+  return(
+   &lt;h1&gt;Hello!&lt;/h1&gt;
+  ) 
+} 							
+						</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card" id="folder_structure">
+                            <div class="header">
+                                <h2>Folder Structure</h2>
+                                <ul class="header-dropdown dropdown">
+                                    <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false">
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="javascript:void(0);">Action</a></li>
+                                            <li><a href="javascript:void(0);">Another Action</a></li>
+                                            <li><a href="javascript:void(0);">Something else</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h5>Folder Directories</h5>
+                            <div class="body">
+                                <!-- Folder Directories -->
+                                <section class="app-brief">
+                                    <div class="left-align">
+                                        <div class="section-header">
+                                            <!-- <h2 class="dark-text">Folder Directories - </h2> -->
+                                        </div>
+                                        <div id="dz_tree" class="tree-demo">
+                                            <ul>
+                                                <li data-jstree='{ "selected" : false }'>app
+                                                </li>
+                                                <li data-jstree='{ "opened" : true }'>public
+                                                    <ul>
+
+                                                        <li data-jstree='{ "selected" : false }'>css</li>
+                                                        <li data-jstree='{ "selected" : false }'>fonts</li>
+                                                        <li data-jstree='{ "selected" : false }'>images
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+                                                <li data-jstree='{ "opened" : true }'>components
+                                                    <ul>
+                                                        <li data-jstree='{ "selected" : false }'>elements</li>
+                                                        <li data-jstree='{ "selected" : true }'>layouts</li>
+                                                        <li data-jstree='{ "selected" : true }'>sections</li>
+                                                        <li data-jstree='{ "selected" : true }'>slider</li>
+
+                                                </li>
+                                            </ul>
+
+                                            </li>
+                                            <li data-jstree='{ "selected" : false }'>lib
+                                            </li>
+                                            <li data-jstree='{ "type" : "file" }'>package.json</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12">
+                        <div class="card" id="Credits">
+                            <div class="header">
+                                <h2>Credits</h2>
+                                <ul class="header-dropdown dropdown">
+                                    <li>
+                                        <a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="javascript:void(0);">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Another Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Something else</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <ul>
+
+                                            <li>
+                                                Next Js
+                                                <a href="https://Next Js.org/" class="text-warning">Click to See</a>
+                                            </li>
+                                            <li>
+                                                Google fonts are used in the template.
+                                                <a href="https://fonts.google.com/specimen/Krub"
+                                                    class="text-warning">Krub</a>
+                                            </li>
+                                            <li>
+                                                Font Awesome:
+                                                <a href="https://fontawesome.com/v4.7.0/" class="text-warning">Click to
+                                                    See</a>
+                                            </li>
+                                            <li>
+                                                All Images are used:
+                                                <a href="https://www.pexels.com/" class="text-warning">Pexels.com</a>
+                                            </li>
+                                            <li>
+                                                Bootstrap framework
+                                                <a href="https://react-bootstrap.github.io/"
+                                                    class="text-warning">Bootstrap</a>
+                                            </li>
+
+                                            <li>React Slick
+                                                <a href="https://react-slick.neostack.com/" target="_blank"
+                                                    class="text-warning">Click to See</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <ul>
+
+                                            <li>Isotope Layout
+                                                <a href="https://www.npmjs.com/package/isotope-layout" target="_blank"
+                                                    class="text-warning">Click to See</a>
+                                            </li>
+                                            <li>WOW JS
+                                                <a href="https://wowjs.uk/docs" target="_blank"
+                                                    class="text-warning">Click to See</a>
+                                            </li>
+                                            <li>React countup
+                                                <a href="https://www.npmjs.com/package/react-countup" target="_blank"
+                                                    class="text-warning">Click to See</a>
+                                            </li>
+                                            <li>React visibility sensor
+                                                <a href="https://www.npmjs.com/package/react-visibility-sensor"
+                                                    target="_blank" class="text-warning">Click to See</a>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12" id="layout"ñ>
+                        <div class="card">
+                            <div class="header">
+                                <h2>Layout
+                                    <small>Layout is controlled by settings object LayoutSettings inside
+                                        src/context/ThemeContext.js</small>
+                                </h2>
+                                <ul class="header-dropdown dropdown">
+                                    <li>
+                                        <a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="javascript:void(0);">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Another Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Something else</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <p>
+                                    <strong>Layout.js</strong>
+                                </p>
+<pre>
+    <code>
+    'use client'
+    import React, { useEffect, useState } from "react";
+    import BackToTop from '../elements/BackToTop';
+    import DataBg from "../elements/DataBg";
+    import Breadcrumb from './Breadcrumb';
+    import SearchPopup from "./SearchPopup";
+    import Sidebar from "./Sidebar";
+    import Footer1 from './footer/Footer1';
+    import Footer2 from './footer/Footer2';
+    import Header1 from "./header/Header1";
+    import Header2 from './header/Header2';
+    import Header3 from "./header/Header3";
+    
+    export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, children, wrapperCls }) {
+        const [scroll, setScroll] = useState(0);
+        // Mobile Menu
+        const [isMobileMenu, setMobileMenu] = useState(false);
+        const handleMobileMenu = () => {
+            setMobileMenu(!isMobileMenu);
+            !isMobileMenu ? document.body.classList.add("mobile-menu-visible") : document.body.classList.remove("mobile-menu-visible");
+        }
+    
+        // Popup
+        const [isPopup, setPopup] = useState(false);
+        const handlePopup = () => setPopup(!isPopup);
+    
+        // Sidebar
+        const [isSidebar, setSidebar] = useState(false);
+        const handleSidebar = () => setSidebar(!isSidebar);
+    
+        useEffect(() => {
+            const WOW = require('wowjs');
+            window.wow = new WOW.WOW({
+                live: false
+            });
+            window.wow.init();
+    
+            document.addEventListener("scroll", () => {
+                const scrollCheck = window.scrollY > 100;
+                if (scrollCheck !== scroll) {
+                    setScroll(scrollCheck);
+                }
+            });
+        }, []);
+    
+        return (
+            &lt;&gt;
+                &lt;DataBg /&gt;
+                &lt;div className={`page-wrapper ${wrapperCls ? wrapperCls : ""}`} id="#top"&gt;
+                    {!headerStyle && &lt;Header1 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} handlePopup={handlePopup} isSidebar={isSidebar} handleSidebar={handleSidebar} /&gt;}
+                    {headerStyle == 1 ? &lt;Header1 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} handlePopup={handlePopup} isSidebar={isSidebar} handleSidebar={handleSidebar} /&gt; : null}
+                    {headerStyle == 2 ? &lt;Header2 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} handlePopup={handlePopup} isSidebar={isSidebar} handleSidebar={handleSidebar} /&gt; : null}
+                    {headerStyle == 3 ? &lt;Header3 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} handlePopup={handlePopup} isSidebar={isSidebar} handleSidebar={handleSidebar} /&gt; : null}
+    
+                    &lt;Sidebar isSidebar={isSidebar} handleSidebar={handleSidebar} /&gt;
+                    &lt;SearchPopup isPopup={isPopup} handlePopup={handlePopup} /&gt;
+    
+                    {breadcrumbTitle && &lt;Breadcrumb breadcrumbTitle={breadcrumbTitle} /&gt;}
+    
+                    {children}
+    
+                    {!footerStyle && &lt;Footer1 /&gt;}
+                    {footerStyle == 1 ? &lt;Footer1 /&gt; : null}
+                    {!footerStyle && &lt;Footer2 /&gt;}
+                    {footerStyle == 2 ? &lt;Footer2 /&gt; : null}
+                &lt;/div&gt;
+                &lt;BackToTop scroll={scroll} /&gt;
+            &lt;/&gt;
+        )
+    }
+    </code>
+    </pre>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="col-sm-12">
+                        <div class="card" id="thank_you">
+                            <div class="header">
+                                <h2>Thank You!</h2>
+                                <ul class="header-dropdown dropdown">
+                                    <li>
+                                        <a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="javascript:void(0);">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Another Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Something else</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <p>
+                                    Once again, thank you so much for purchasing this template.
+                                    As I said at the beginning, I&#39;d be glad to help you if
+                                    you have any questions relating to this template.
+                                </p>
+                                <p>
+                                    <strong>REGULAR SUPPORT</strong> : You have in template
+                                    support if you face any issue with the usage of it then you
+                                    can contact us on below Email ID.
+                                </p>
+                                <p>
+                                    <strong>EXTENDED SUPPORT</strong> : Development it is
+                                    chargeable according to your requirement. For that you need
+                                    to mail us your requirement on below Email ID.
+                                </p>
+                                <p>
+                                    <strong>COST OF SERVICE</strong> : Depends on the hours
+                                    required. But as you are already using our template we have
+                                    discounted rates for our template customer.
+                                </p>
+                                <p>
+                                    <strong>EXTENDED LICENSE</strong> : With the Extended
+                                    Support we also include Extended License. So you save much
+                                    more with your investment than you will with purchasing
+                                    Regular License and later buying Extended one + Development
+                                    cost.
+                                </p>
+                                <p>
+                                    You will get a quick reply from our team and feel free to
+                                    contact us. We don’t charge for requirement discussion so
+                                    don’t worry.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="./assets/bundles/libscripts.bundle.js"></script>
+    <script src="./assets/bundles/vendorscripts.bundle.js"></script>
+
+    <script src="./assets/bundles/lightgallery.bundle.js"></script>
+    <!-- Light Gallery Plugin Js -->
+
+    <script src="./assets/bundles/mainscripts.bundle.js"></script>
+
+    <!-- Folder onClick -->
+    <script src="./assets/vendor/jstree/dist/jstree.min.js"></script>
+
+    <!-- <script>
+      <!-- $(".metismenu li").click(function () { -->
+    <!-- var $this = $(this); -->
+    <!-- if (!$this.is("active")) { -->
+    <!-- $(".metismenu li").removeClass("active").removeData("top"); -->
+    <!-- $this.addClass("active").data("top", $this.offset().top); -->
+    <!-- } -->
+    <!-- }); -->
+    </script> -->
+    <script>
+        // prettyPhoto
+        jQuery(document).ready(function () {
+
+            $(".full-height").css("height", $(window).height())
+
+            $("#dz_tree").jstree({
+                "core": {
+                    "themes": {
+                        "responsive": false
+                    }
+                },
+                "types": {
+                    "default": {
+                        "icon": "fa fa-folder"
+                    },
+                    "file": {
+                        "icon": "fa fa-file-text"
+                    }
+                },
+                "plugins": ["types"]
+            })
+            $("#dz_tree_1").jstree({
+                "core": {
+                    "themes": {
+                        "responsive": false
+                    }
+                },
+                "types": {
+                    "default": {
+                        "icon": "fa fa-folder"
+                    },
+                    "file": {
+                        "icon": "fa fa-file-text"
+                    }
+                },
+                "plugins": ["types"]
+            })
+        });
+    </script>
+</body>
+
+</html>
